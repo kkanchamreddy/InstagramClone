@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.nostra13.universalimageloader.core.ImageLoader;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -17,7 +17,6 @@ import java.util.ArrayList;
  */
 public class PicturesAdapter  extends ArrayAdapter<Picture> {
 
-    ImageLoader imageLoader = ImageLoader.getInstance();
     private static class ViewHolder {
         TextView tvUserName;
         ImageView ivImage;
@@ -51,8 +50,8 @@ public class PicturesAdapter  extends ArrayAdapter<Picture> {
         viewHolder.tvCaption.setText(pic.caption);
 
         //viewHolder.ivImage.setImageURI(android.net.Uri.parse(pic.imageUrl));
+        Picasso.with(getContext()).load(pic.imageUrl).into(viewHolder.ivImage);
 
-        imageLoader.displayImage(pic.imageUrl, viewHolder.ivImage);
 
 
         // Return the completed view to render on screen

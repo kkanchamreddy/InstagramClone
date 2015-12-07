@@ -34,7 +34,7 @@ The following **additional** features are implemented:
 
 * [ ] List anything else that you can get done to improve the app functionality!
 
-## Video Walkthrough 
+## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
@@ -49,7 +49,7 @@ Describe any challenges encountered while building the app.
 ## Open-source libraries used
 
 - [Android Async HTTP](https://github.com/loopj/android-async-http) - Simple asynchronous HTTP requests with JSON parsing
-- [Universal Image Loader](https://github.com/nostra13/Android-Universal-Image-Loader) - Image loading and caching library for Android
+- [Picasso](http://square.github.io/picasso/) - Image loading and caching library for Android
 
 ## License
 

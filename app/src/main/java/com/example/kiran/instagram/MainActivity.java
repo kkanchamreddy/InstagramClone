@@ -1,7 +1,6 @@
 package com.example.kiran.instagram;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,10 +8,6 @@ import android.util.Log;
 import android.widget.ListView;
 
 import com.loopj.android.http.JsonHttpResponseHandler;
-import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -36,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initImageLoader(getApplicationContext());
 
         //get the list view
         lvPics = (ListView) findViewById(R.id.lvItems);
@@ -108,23 +102,5 @@ public class MainActivity extends AppCompatActivity {
 
         myTask.execute();
     }
-
-    public static void initImageLoader(Context context) {
-        // This configuration tuning is custom. You can tune every option, you may tune some of them,
-        // or you can create default configuration by
-        //  ImageLoaderConfiguration.createDefault(this);
-        // method.
-        ImageLoaderConfiguration.Builder config = new ImageLoaderConfiguration.Builder(context);
-        config.threadPriority(Thread.NORM_PRIORITY - 2);
-        config.denyCacheImageMultipleSizesInMemory();
-        config.diskCacheFileNameGenerator(new Md5FileNameGenerator());
-        config.diskCacheSize(50 * 1024 * 1024); // 50 MiB
-        config.tasksProcessingOrder(QueueProcessingType.LIFO);
-        config.writeDebugLogs(); // Remove for release app
-
-        // Initialize ImageLoader with configuration.
-        ImageLoader.getInstance().init(config.build());
-    }
-
 
 }
