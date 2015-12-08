@@ -24,7 +24,7 @@ public class PicturesAdapter  extends ArrayAdapter<Picture> {
     Transformation transformation = new RoundedTransformationBuilder()
             .borderColor(Color.BLACK)
             .borderWidthDp(1)
-            .cornerRadiusDp(30)
+            .cornerRadiusDp(15)
             .oval(true)
             .build();
 
