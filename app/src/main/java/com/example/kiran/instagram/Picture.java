@@ -8,6 +8,7 @@ public class Picture {
     public String userName;
     public String caption;
     public String likeCount;
+    public String userProfilePic;
 
     public Picture(String imageUrl, String userName, String caption, String likeCount) {
 
@@ -15,6 +16,10 @@ public class Picture {
         this.userName = userName;
         this.caption = caption;
         this.likeCount = likeCount;
+    }
+
+    public void setUserProfilePicture(String profilePic) {
+       this.userProfilePic = profilePic;
     }
 
 }

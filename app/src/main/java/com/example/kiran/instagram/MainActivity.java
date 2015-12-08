@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
                                         user.getString("username"),
                                         caption.getString("text"),
                                         likes.getString("count"));
+                                pic.setUserProfilePicture(user.getString("profile_picture"));
                                 pics.add(pic);
                                 // Log.i("Photo", popularPhoto.get("user").toString());
                             }
